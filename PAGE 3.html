@@ -7,17 +7,13 @@
     <title>INPT Campus Link</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Vous pouvez inclure un CDN d'icônes comme FontAwesome pour ajouter des icônes -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <div class="sidebar">
             <div class="profile">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMI7WlylmbG43gAzMOi7vvicF0PVcKyFKFw&s"
-                    alt="Profile">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMI7WlylmbG43gAzMOi7vvicF0PVcKyFKFw&s" alt="Profile">
                 <p>PPP cloud</p>
             </div>
             <ul class="nav">
@@ -30,6 +26,7 @@
                 <li><a href="#"><i class="fas fa-calendar-day"></i> Événements</a></li>
             </ul>
         </div>
+
         <div class="main-content">
             <div class="header">
                 <h2>INPT Campus Link</h2>
@@ -40,54 +37,33 @@
                     </button>
                 </div>
             </div>
-            <!-- Main content continues here -->
-        </div>
 
-        <div class="post-box">
-            <textarea placeholder="Quoi de neuf ?"></textarea>
-            <button>Publier</button>
-        </div>
-        <div class="posts">
-            <div class="post">
-                <div class="post-header">
-                    <img src="profile-pic.jpg" alt="User">
-                    <strong>Nom de l'utilisateur</strong>
-                    <span>Il y a 1 heure</span>
+            <div class="content">
+                <!-- Place your dynamic content here (posts, events, etc.) -->
+                <div class="post-box">
+                    <textarea placeholder="Quoi de neuf ?"></textarea>
+                    <button>Publier</button>
                 </div>
-                <p>Contenu de la publication...</p>
-                <div class="post-actions">
-                    <button>J'aime</button>
-                    <button>Commenter</button>
-                    <button>Partager</button>
-                </div>
-            </div>
-            <div class="post">
-                <div class="post-header">
-                    <img src="profile-pic2.jpg" alt="User">
-                    <strong>Autre utilisateur</strong>
-                    <span>Il y a 2 heures</span>
-                </div>
-                <p>Contenu de la publication...</p>
-                <div class="post-actions">
-                    <button>J'aime</button>
-                    <button>Commenter</button>
-                    <button>Partager</button>
+
+                <!-- Dynamic Posts Display -->
+                <div class="posts">
+                    <!-- Example Post -->
+                    <div class="post">
+                        <div class="post-header">
+                            <img src="profile-pic.jpg" alt="User">
+                            <strong>Nom de l'utilisateur</strong>
+                            <span>Il y a 1 heure</span>
+                        </div>
+                        <p>Contenu de la publication...</p>
+                        <div class="post-actions">
+                            <button>J'aime</button>
+                            <button>Commenter</button>
+                            <button>Partager</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="announcements">
-            <div class="announcement">
-                <h3><i class="fas fa-bullhorn"></i> Annonce importante</h3>
-                <p>Nouvelle session de formation sur le cloud computing ce samedi !</p>
-                <button>Voir plus</button>
-            </div>
-            <div class="announcement">
-                <h3><i class="fas fa-bullhorn"></i> Annonce de recrutement</h3>
-                <p>Offre de stage chez une startup en IoT. Postulez avant la fin du mois !</p>
-                <button>Voir plus</button>
-            </div>
-        </div>
-    </div>
     </div>
 
     <script src="script.js"></script>
