@@ -1,0 +1,145 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #003366, #00b5e2);
+    /* Dégradé bleu */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s ease;
+    overflow: hidden;
+    /* Empêche le défilement */
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fond blanc légèrement transparent */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.welcome-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #003366;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #00b5e2;
+}
+
+#startButton {
+    background-color: #00b5e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#startButton:hover {
+    background-color: #003366;
+    /* Bleu foncé pour le survol */
+}
+
+/* Registration Section */
+.registration-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Légère opacité */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #003366;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+    color: #003366;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline-color: #00b5e2;
+    /* Bordure bleue lors du focus */
+}
+
+button.register-button {
+    background-color: #00b5e2;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button.register-button:hover {
+    background-color: #003366;
+}
+
+p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+a {
+    color: #00b5e2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
