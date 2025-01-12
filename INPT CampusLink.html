@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPTCampusLink</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Welcome Section -->
+    <div id="welcomeSection" class="welcome-section">
+        <div class="welcome-content">
+            <h1>Welcome to INPTCampusLink</h1>
+            <p>Your gateway to connecting with INPT students and alumni.</p>
+            <button id="startButton">Start</button>
+        </div>
+    </div>
+
+    <!-- Registration Section (Hidden Initially) -->
+    <div id="registrationSection" class="hidden">
+        <div class="registration-modal">
+            <div class="modal-content">
+                <h2>Register on INPTCampusLink</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Name:</label>
+                        <input type="text" id="registerName" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" id="registerPassword" name="password" placeholder="Create a password"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password:</label>
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword"
+                            placeholder="Confirm your password" required>
+                    </div>
+
+                    <button type="submit" class="register-button">Register</button>
+                    <p>Already have an account? <a href="#" id="loginLink">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
