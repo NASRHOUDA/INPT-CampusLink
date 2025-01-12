@@ -89,7 +89,6 @@ body {
     color: white;
 }
 
-/* Header title */
 .header h2 {
     font-size: 28px;
     font-weight: bold;
@@ -121,29 +120,14 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* Search icon */
 .btn-search i {
     font-size: 18px;
 }
 
-/* Hover effects */
 .btn-search:hover {
     background-color: #165fbb;
-}
-
-.search-input:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(24, 119, 242, 0.7);
-}
-
-
-.btn-create-post:hover {
-    background-color: #165e9d;
 }
 
 /* Post box */
@@ -192,49 +176,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.post-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.post-header img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-}
-
-.post-header strong {
-    font-size: 16px;
-    margin-right: 10px;
-}
-
-.post-header span {
-    font-size: 12px;
-    color: #888;
-}
-
-.post-actions {
-    margin-top: 15px;
-}
-
-.post-actions button {
-    padding: 5px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f5f6f7;
-    color: #555;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.post-actions button:hover {
-    background-color: #e4e6e9;
-}
-
-/* Announcements */
+/* Announcements (Optional section) */
 .announcements {
     margin-top: 40px;
 }
@@ -247,20 +189,3 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.announcement h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.announcement button {
-    background-color: #1877f2;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.announcement button:hover {
-    background-color: #165e9d;
-}
