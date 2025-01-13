@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Ajouter une nouvelle publication
+    const addPostButton = document.querySelector('.add-post-btn');
+    const content = document.querySelector('.content');
+
+    // Lorsque l'utilisateur clique sur le bouton "+" (add-post-btn)
+    addPostButton.addEventListener('click', function () {
+        content.style.display = 'block'; // Afficher la zone de publication
+        addPostButton.style.display = 'none'; // Masquer le bouton "+"
+    });
+
     const createPostButton = document.querySelector('.btn-create-post');
     const postBoxTextarea = document.querySelector('.post-box textarea');
     const postsContainer = document.querySelector('.posts');
@@ -11,108 +19,109 @@ document.addEventListener('DOMContentLoaded', function () {
             const newPost = document.createElement('div');
             newPost.classList.add('post');
 
+            // En-tête du post
             const postHeader = document.createElement('div');
             postHeader.classList.add('post-header');
 
             const userImage = document.createElement('img');
-            userImage.src = 'profile-pic.jpg';  // Image de profil
+            userImage.src = 'https://via.placeholder.com/50'; // Image utilisateur
             userImage.alt = 'User';
+            userImage.classList.add('profile-pic');
             postHeader.appendChild(userImage);
 
+            const userInfo = document.createElement('div');
             const userName = document.createElement('strong');
-            userName.textContent = 'Nom de l\'utilisateur';  // Nom de l'utilisateur
-            postHeader.appendChild(userName);
-
+            userName.textContent = 'Nom de l\'utilisateur';
             const postTime = document.createElement('span');
-            postTime.textContent = 'Il y a quelques secondes';  // Heure
-            postHeader.appendChild(postTime);
+            postTime.classList.add('time');
+            postTime.textContent = 'Il y a quelques secondes';
+            userInfo.appendChild(userName);
+            userInfo.appendChild(postTime);
+            postHeader.appendChild(userInfo);
 
             newPost.appendChild(postHeader);
 
+            // Contenu du post (texte)
+            const postContentDiv = document.createElement('div');
             const postText = document.createElement('p');
-            postText.textContent = postContent;  // Contenu de la publication
-            newPost.appendChild(postText);
+            postText.textContent = postContent;
+            postContentDiv.appendChild(postText);
+            newPost.appendChild(postContentDiv);
 
+            // Réactions du post
             const postActions = document.createElement('div');
             postActions.classList.add('post-actions');
 
-            const likeButton = document.createElement('button');
-            likeButton.textContent = 'J\'aime';
-            postActions.appendChild(likeButton);
+            const reactions = ['👍', '❤️', '😂', '😡', '💬', '🔗'];
 
-            const commentButton = document.createElement('button');
-            commentButton.textContent = 'Commenter';
-            postActions.appendChild(commentButton);
-
-            const shareButton = document.createElement('button');
-            shareButton.textContent = 'Partager';
-            postActions.appendChild(shareButton);
+            reactions.forEach(symbol => {
+                const button = document.createElement('button');
+                button.classList.add('reaction');
+                button.innerHTML = symbol;
+                postActions.appendChild(button);
+            });
 
             newPost.appendChild(postActions);
 
-            postsContainer.prepend(newPost);  // Ajouter la publication en haut de la liste des posts
+            // Section des commentaires (initialement masquée)
+            const commentsSection = document.createElement('div');
+            commentsSection.classList.add('comments-section', 'hidden');
 
-            // Réinitialiser le champ de texte après la publication
+            const commentBox = document.createElement('textarea');
+            commentBox.classList.add('comment-box');
+            commentBox.placeholder = 'Écrire un commentaire...';
+            commentsSection.appendChild(commentBox);
+
+            const commentButton = document.createElement('button');
+            commentButton.classList.add('btn-comment');
+            commentButton.textContent = 'Publier';
+            commentsSection.appendChild(commentButton);
+
+            newPost.appendChild(commentsSection);
+
+            postsContainer.prepend(newPost);
+
+            // Réinitialiser la zone de texte
             postBoxTextarea.value = '';
         } else {
             alert('Veuillez écrire quelque chose avant de publier !');
         }
     });
 
-    // Ajouter une notification
-    const notificationsButton = document.querySelector('.fas.fa-bell');
-    const notificationsContainer = document.createElement('div');
-    notificationsContainer.classList.add('notifications-container');
-
-    notificationsButton.addEventListener('click', function () {
-        const newNotification = document.createElement('div');
-        newNotification.classList.add('notification');
-        newNotification.textContent = 'Nouvelle notification: Mise à jour du statut de votre candidature.';
-
-        notificationsContainer.appendChild(newNotification);
-
-        // Afficher les notifications dans la barre latérale
-        document.body.appendChild(notificationsContainer);
-
-        // Retirer la notification après 5 secondes
-        setTimeout(function () {
-            notificationsContainer.removeChild(newNotification);
-        }, 5000);
-    });
-
-    // Recherche simple (affichage de suggestions basées sur ce que l'utilisateur tape)
-    const searchButton = document.querySelector('.fas.fa-search');
-    const searchContainer = document.createElement('div');
-    searchContainer.classList.add('search-suggestions');
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.placeholder = 'Rechercher...';
-    searchContainer.appendChild(searchInput);
-
-    searchButton.addEventListener('click', function () {
-        if (!document.body.contains(searchContainer)) {
-            document.body.appendChild(searchContainer);
-        } else {
-            searchContainer.remove();
+    // Gestion des interactions
+    postsContainer.addEventListener('click', function (e) {
+        // Afficher/Masquer les commentaires
+        if (e.target.classList.contains('reaction') && e.target.innerHTML === '💬') {
+            const commentsSection = e.target.closest('.post').querySelector('.comments-section');
+            commentsSection.classList.toggle('hidden');
         }
-    });
 
-    // Suggestions basées sur la recherche
-    searchInput.addEventListener('input', function () {
-        const query = searchInput.value.toLowerCase();
-        const suggestions = ['Formation IoT', 'Stage en Cloud Computing', 'Offre d\'emploi', 'Annonce alumni'];
-        const filteredSuggestions = suggestions.filter(function (suggestion) {
-            return suggestion.toLowerCase().includes(query);
-        });
+        // Ajouter un commentaire
+        if (e.target.classList.contains('btn-comment')) {
+            const commentBox = e.target.previousElementSibling;
+            const commentContent = commentBox.value.trim();
 
-        searchContainer.innerHTML = '';  // Réinitialiser les suggestions
-        searchContainer.appendChild(searchInput);
+            if (commentContent !== '') {
+                const comment = document.createElement('div');
+                comment.classList.add('comment');
 
-        filteredSuggestions.forEach(function (suggestion) {
-            const suggestionElement = document.createElement('div');
-            suggestionElement.classList.add('suggestion');
-            suggestionElement.textContent = suggestion;
-            searchContainer.appendChild(suggestionElement);
-        });
+                const userImage = document.createElement('img');
+                userImage.src = 'https://via.placeholder.com/50';
+                userImage.alt = 'User';
+                userImage.classList.add('profile-pic');
+                comment.appendChild(userImage);
+
+                const commentText = document.createElement('p');
+                commentText.innerHTML = `<strong>Vous:</strong> ${commentContent}`;
+                comment.appendChild(commentText);
+
+                const commentsSection = e.target.closest('.comments-section');
+                commentsSection.insertBefore(comment, commentBox);
+
+                commentBox.value = ''; // Réinitialiser la zone de texte après le commentaire
+            } else {
+                alert('Veuillez écrire un commentaire !');
+            }
+        }
     });
 });
