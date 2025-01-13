@@ -13,7 +13,8 @@
     <div class="container">
         <div class="sidebar">
             <div class="profile">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMI7WlylmbG43gAzMOi7vvicF0PVcKyFKFw&s" alt="Profile">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMI7WlylmbG43gAzMOi7vvicF0PVcKyFKFw&s"
+                    alt="Profile">
                 <p>PPP cloud</p>
             </div>
             <ul class="nav">
@@ -38,33 +39,63 @@
                 </div>
             </div>
 
-            <div class="content">
-                <!-- Place your dynamic content here (posts, events, etc.) -->
+
+            <!-- Zone du bouton "+" qui affiche la zone de publication -->
+            <div class="add-post-btn">
+                <span class="plus-icon">+</span>
+            </div>
+
+            <!-- Zone de publication cachée par défaut -->
+            <div class="content" style="display: none;">
                 <div class="post-box">
                     <textarea placeholder="Quoi de neuf ?"></textarea>
-                    <button>Publier</button>
-                </div>
-
-                <!-- Dynamic Posts Display -->
-                <div class="posts">
-                    <!-- Example Post -->
-                    <div class="post">
-                        <div class="post-header">
-                            <img src="profile-pic.jpg" alt="User">
-                            <strong>Nom de l'utilisateur</strong>
-                            <span>Il y a 1 heure</span>
-                        </div>
-                        <p>Contenu de la publication...</p>
-                        <div class="post-actions">
-                            <button>J'aime</button>
-                            <button>Commenter</button>
-                            <button>Partager</button>
-                        </div>
-                    </div>
+                    <button class="btn-create-post">Publier</button>
                 </div>
             </div>
-        </div>
-    </div>
+
+
+
+
+            <div class="post">
+                <div class="post-header">
+                    <img class="profile-pic"
+                        src="https://images.pexels.com/photos/3680219/pexels-photo-3680219.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="User">
+                    <div class="user-info">
+                        <strong>Salma hamiidi</strong>
+                        <span class="time">Il y a quelques secondes</span>
+                    </div>
+                </div>
+
+                <!-- Contenu du post avec image et légende -->
+                <div class="post-content">
+                    <p class="caption"> Une belle vue !</p>
+                    <img src="https://www.missionphotographe.com/ressources/images-actualites/actualite-169.jpg?version=1"
+                        alt="Post Image" class="post-image">
+                </div>
+
+                <!-- Réactions du post -->
+                <div class="post-actions">
+                    <button class="reaction">👍</button>
+                    <button class="reaction">❤️</button>
+                    <button class="reaction">😂</button>
+                    <button class="reaction">😡</button>
+                    <button class="reaction">💬</button>
+                    <button class="reaction">🔗</button>
+                </div>
+
+                <!-- Section des commentaires (initialement masquée) -->
+                <div class="comments-section hidden">
+                    <textarea class="comment-box" placeholder="Écrire un commentaire..."></textarea>
+                    <button class="btn-comment">Publier</button>
+                </div>
+            </div>
+
+
+            <script src="script.js"></script>
+</body>
+
+</html>
 
     <script src="script.js"></script>
 </body>
