@@ -130,7 +130,37 @@ body {
     background-color: #165fbb;
 }
 
-/* Post box */
+/* Style du bouton d'ajout */
+.add-post-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #1877f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-post-btn:hover {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+}
+
+/* Zone de publication (cachée par défaut) */
+.content {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Style de la boîte de publication */
 .post-box {
     background-color: #ffffff;
     padding: 15px;
@@ -163,18 +193,121 @@ body {
     background-color: #165e9d;
 }
 
-/* Posts */
-.posts {
-    margin-top: 30px;
-}
 
 .post {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
 }
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-info {
+    font-size: 14px;
+}
+
+.post-content {
+    width: 100%;
+    /* Prendre toute la largeur du conteneur */
+    text-align: center;
+    /* Centrer les éléments */
+    position: relative;
+    /* Pour permettre à l'image de prendre toute la largeur */
+    padding: 10px 0;
+    /* Un peu d'espace autour de l'image */
+}
+
+.post-content .caption {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+
+    /* Fond clair pour la légende */
+    padding: 5px 10px;
+    border-radius: 8px;
+    max-width: 90%;
+    /* Limiter la largeur de la légende */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-content .post-image {
+    width: 100%;
+    /* L'image prend toute la largeur du conteneur */
+    height: auto;
+    /* Garder les proportions de l'image */
+    border-radius: 8px;
+    /* Ajouter des coins arrondis */
+    object-fit: cover;
+    /* Couvrir toute la zone sans distorsion */
+}
+
+
+.post-actions button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    /* Ajuster la taille du symbole */
+    transition: transform 0.3s ease;
+    /* Transition pour l'effet de zoom */
+}
+
+.post-actions button:hover {
+    background-color: #ddd;
+    transform: scale(1.2);
+    /* Agrandir au survol */
+}
+
+.comments-section {
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.comment-box {
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-comment {
+    margin-top: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-comment:hover {
+    background-color: #0056b3;
+}
+
+
+
 
 /* Announcements (Optional section) */
 .announcements {
@@ -188,4 +321,3 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
