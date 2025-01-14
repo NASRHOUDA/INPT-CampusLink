@@ -154,11 +154,11 @@ body {
     font-size: 20px;
 }
 
-/* Zone de publication (cachée par défaut) */
 .content {
-    display: none;
-    margin-top: 10px;
+    display: none; /* La zone est cachée par défaut */
+    margin-top: 20px;
 }
+
 
 /* Style de la boîte de publication */
 .post-box {
