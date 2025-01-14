@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPTCampusLink</title>
+    <link rel="stylesheet" href="tout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Welcome Section -->
+    <div id="welcomeSection" class="welcome-section">
+        <div class="welcome-content">
+            <h1>Welcome to INPTCampusLink</h1>
+            <p>Your gateway to connecting with INPT students and alumni.</p>
+            <button id="startButton" class="btn">Start</button>
+        </div>
+    </div>
+
+    <!-- Registration Section (Hidden Initially) -->
+    <div id="registrationSection" class="hidden">
+        <div class="registration-modal">
+            <div class="modal-content">
+                <h2>Register on INPTCampusLink</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Name:</label>
+                        <input type="text" id="registerName" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" id="registerPassword" name="password" placeholder="Create a password"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registerConfirmPassword">Confirm Password:</label>
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword"
+                            placeholder="Confirm your password" required>
+                    </div>
+
+                    <button type="submit" class="btn-register">Register</button>
+                    <p>Already have an account? <a href="#" id="loginLink">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section (Visible After Registration) -->
+    <div id="dashboardSection" class="hidden">
+        <div class="container">
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMI7WlylmbG43gAzMOi7vvicF0PVcKyFKFw&s"
+                        alt="Profile" class="profile-pic">
+                    <p id="userName">PPP cloud</p>
+                </div>
+                <ul class="nav">
+                    <li><a href="#"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Groupes</a></li>
+                    <li><a href="#"><i class="fas fa-comment-dots"></i> Chats</a></li>
+                    <li><a href="#"><i class="fas fa-briefcase"></i> Offres d'emploi</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> Paramètres</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="#"><i class="fas fa-calendar-day"></i> Événements</a></li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="header">
+                    <h2>INPT Campus Link</h2>
+                    <div class="search-container">
+                        <input type="text" placeholder="Rechercher..." class="search-input">
+                        <button class="btn-search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="add-post-btn">
+                    <span class="plus-icon">+</span>
+                </div>
+
+                <div class="content hidden">
+                    <div class="post-box">
+                        <textarea placeholder="Quoi de neuf ?"></textarea>
+                        <button class="btn-create-post">Publier</button>
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-header">
+                        <img class="profile-pic"
+                            src="https://images.pexels.com/photos/3680219/pexels-photo-3680219.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            alt="User">
+                        <div class="user-info">
+                            <strong>Salma hamiidi</strong>
+                            <span class="time">Il y a quelques secondes</span>
+                        </div>
+                    </div>
+
+                    <div class="post-content">
+                        <p class="caption">Une belle vue !</p>
+                        <img src="https://www.missionphotographe.com/ressources/images-actualites/actualite-169.jpg?version=1"
+                            alt="Post Image" class="post-image">
+                    </div>
+
+                    <div class="post-actions">
+                        <button class="reaction">👍</button>
+                        <button class="reaction">❤️</button>
+                        <button class="reaction">😂</button>
+                        <button class="reaction">😡</button>
+                        <button class="reaction">💬</button>
+                        <button class="reaction">🔗</button>
+                    </div>
+
+                    <div class="comments-section hidden">
+                        <textarea class="comment-box" placeholder="Écrire un commentaire..."></textarea>
+                        <button class="btn-comment">Publier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="tout.js"></script>
+
+</body>
+
+</html>
