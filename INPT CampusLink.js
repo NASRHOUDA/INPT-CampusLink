@@ -11,6 +11,8 @@ window.onload = function () {
         registrationSection.classList.remove('hidden'); // Afficher la section d'enregistrement
     });
 
+
+
     // Lors de la soumission du formulaire d'inscription
     registerForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Empêche l'envoi du formulaire
@@ -40,3 +42,8 @@ window.onload = function () {
         // Redirection vers la page de connexion (si implémentée)
     });
 };
+
+
+function idkwtthat(){
+    window.location.href = 'PAGE 3.html';
+}
