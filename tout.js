@@ -1,5 +1,4 @@
-window.onload = function () {
-    // Variables pour la section d'enregistrement
+// Variables pour la section d'enregistrement
     const welcomeSection = document.getElementById('welcomeSection');
     const registrationSection = document.getElementById('registrationSection');
     const startButton = document.getElementById('startButton');
